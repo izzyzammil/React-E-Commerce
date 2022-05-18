@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import { Link } from "react-router-dom";
 
 function Product() {
   const [data, setData] = useState([]);
@@ -103,9 +104,12 @@ function Product() {
                       {product.title.substring(0, 16)}...
                     </h5>
                     <p class="card-text fw-bold lead">${product.price}</p>
-                    <a href="#" class="btn btn-outline-dark">
+                    <Link
+                      to={`/products/${product.id}`}
+                      class="btn btn-outline-dark"
+                    >
                       Buy Now
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
